@@ -1,12 +1,12 @@
 # This script organizes files in a source directory based on their file type (extension) into specific folders in a target directory.
-# Created by Ricardo Danganan
+# Author: Ricardo Danganan
 
 # This is the source directory where the files will be organized and the target directory where the files will be moved to.
 # They are defined as variables named $sourceDirectory and $targetDirectory, respectively.
-$sourceDirectory = "C:\Users\RicardoDanganan\Downloads"
+$sourceDirectory = "C:\Users\RicardoDanganan\Desktop"
 $targetDirectory = "C:\Users\RicardoDanganan\Desktop\FileAutomationFolder"
 
-# Check if the source directory exists and if it contains any files to organize.
+# This if statement checks if the source directory exists and if it contains any files to organize.
 # Test-path is used to check if the directory exists
 if (-Not (Test-Path -Path $targetDirectory)) {
     # If the target directory does not exist, using new-item to create a new directory with the specified path to the variable $targetDirectory
@@ -16,8 +16,8 @@ if (-Not (Test-Path -Path $targetDirectory)) {
 # Create an array of file types and corresponding folder names where the files will be moved to based on their extension.
 # I named the array $fileTypeFolders 
 $fileTypeFolders = @{
-# Appropriate files are moved to the corresponding folders based on their extension.
-# Example: (PDF files will be moved to the 'PDF-Files' folder)
+    # Appropriate files are moved to the corresponding folders based on their extension.
+    # Example: (PDF files will be moved to the 'PDF-Files' folder)
     'pdf'  = 'PDF-Files' 
     'docx' = 'WordDocuments-Files' 
     'doc'  = 'WordDocuments-Files' 
@@ -38,7 +38,7 @@ Get-ChildItem -Path $sourceDirectory -File | ForEach-Object {
     # Assign the extension to a variable named $extension.
     $extension = $file.Extension.TrimStart('.')
     # Check if the file extension exists in the $fileTypeFolders array.
-    # ContainsKey is used to check if the key exists in the hashtable.
+    # ContainsKey is used to check if the key exists in the array hashtable.
     if ($fileTypeFolders.ContainsKey($extension)) {
         # If the file extension exists in the array, create the target folder path using Join-Path and assign it to a variable named $targetFolder.
         # Join-Path is used to combine the $targetDirectory and the corresponding folder name based on the file extension.
@@ -59,3 +59,4 @@ Get-ChildItem -Path $sourceDirectory -File | ForEach-Object {
 
 # Output a message using Write-Host to indicate the completion of the file organization process.
 Write-Host "File organization complete."
+
