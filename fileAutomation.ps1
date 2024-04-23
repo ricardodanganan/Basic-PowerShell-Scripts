@@ -4,7 +4,7 @@
 # This is the source directory where the files will be organized and the target directory where the files will be moved to.
 # They are defined as variables named $sourceDirectory and $targetDirectory, respectively.
 $sourceDirectory = "C:\Users\RicardoDanganan\Downloads"
-$targetDirectory = "C:\Users\RicardoDanganan\Desktop\DownloadTestFolder"
+$targetDirectory = "C:\Users\RicardoDanganan\Desktop\FileAutomationFolder"
 
 # Check if the source directory exists and if it contains any files to organize.
 # Test-path is used to check if the directory exists
