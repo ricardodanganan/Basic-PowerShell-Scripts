@@ -16,14 +16,16 @@ if (-Not (Test-Path -Path $targetDirectory)) {
 # Create an array of file types and corresponding folder names where the files will be moved to based on their extension.
 # I named the array $fileTypeFolders 
 $fileTypeFolders = @{
-    'pdf'  = 'PDF-Files' # PDF files will be moved to the 'PDF-Files' folder
-    'docx' = 'WordDocuments-Files' # Word documents will be moved to the 'WordDocuments-Files' folder
-    'doc'  = 'WordDocuments-Files' # Word documents will be moved to the 'WordDocuments-Files' folder
-    'pptx' = 'PowerpointPresentations-Files' #  Powerpoint presentations will be moved to the 'PowerpointPresentations-Files' folder
-    'ppt'  = 'PowerpointPresentations-Files' # Powerpoint presentations will be moved to the 'PowerpointPresentations-Files' folder
-    'txt'  = 'Text-Files' # Text files will be moved to the 'Text-Files' folder
-    'xlsx' = 'Excel-Files' # Excel files will be moved to the 'Excel-Files' folder
-    'xls'  = 'Excel-Files'# Excel files will be moved to the 'Excel-Files' folder
+# Appropriate files are moved to the corresponding folders based on their extension.
+# Example: (PDF files will be moved to the 'PDF-Files' folder)
+    'pdf'  = 'PDF-Files' 
+    'docx' = 'WordDocuments-Files' 
+    'doc'  = 'WordDocuments-Files' 
+    'pptx' = 'PowerpointPresentations-Files' 
+    'ppt'  = 'PowerpointPresentations-Files' 
+    'txt'  = 'Text-Files' 
+    'xlsx' = 'Excel-Files' 
+    'xls'  = 'Excel-Files'
 }
 
 # Get all the files in the source directory using Get-ChildItem and pipe the output to ForEach-Object to process each file.
