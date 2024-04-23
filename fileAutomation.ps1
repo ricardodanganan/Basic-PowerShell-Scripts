@@ -32,6 +32,7 @@ $fileTypeFolders = @{
 Get-ChildItem -Path $sourceDirectory -File | ForEach-Object {
     # This variable is a placeholder variable that represents each file in the source directory during each iteration of the loop.
     # Assign the current file to a variable named $file.
+    # the $_ is a placeholder variable that represents the current object in the pipeline, which in this case is the file, during each iteration of the loop.
     $file = $_
     # Get the extension of the file and remove the leading dot. 
     # Assign the extension to a variable named $extension.
