@@ -7,3 +7,5 @@ Get-Date | Out-File -FilePath C:\Users\RicardoDanganan\Desktop\Disk-Space-log.tx
 # Get the disk space of all drives using the Get-PSDrive cmdlet with the -PSProvider parameter set to FileSystem.
 # Pipe the output to the Out-File cmdlet to append it to the log file.
 Get-PSDrive -PSProvider FileSystem | Out-file -FilePath C:\Users\RicardoDanganan\Desktop\Disk-Space-log.txt -Append
+# Output a message using Write-Host to indicate the completion of the disk space logging process.
+Write-Host "Disk space logging process complete!."
