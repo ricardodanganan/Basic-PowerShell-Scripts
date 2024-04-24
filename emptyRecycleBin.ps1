@@ -23,13 +23,13 @@ if ($recycleBin.Items().Count -gt 0) {
         $item.InvokeVerb("delete")
         # Output a message using Write-Host to indicate the deletion of the item.
         # The $item.Name property is used to display the name of the deleted item.
-        Write-Host "Deleted item: $($item.Name)"
+        Write-Host "Item successfully deleted: $($item.Name)"
     }
     # Output a message using Write-Host to indicate the successful emptying of the Recycle Bin.
-    Write-Host "Recycle Bin emptied successfully."
+    Write-Host "Recycle Bin was emptied successfully."
 } else {
     # Output a message using Write-Host to indicate that the Recycle Bin is already empty.
-    Write-Host "Recycle Bin is already empty."
+    Write-Host "Recycle Bin was already empty."
 }
 
 # Release the Shell COM object to free up resources.
@@ -39,5 +39,5 @@ if ($recycleBin.Items().Count -gt 0) {
 Remove-Variable shell
 
 # Output a message using Write-Host to indicate the completion of the Recycle Bin cleanup process.
-Write-Host "Recycle Bin cleanup process completed."
+Write-Host "Recycle Bin script process complete!."
 
