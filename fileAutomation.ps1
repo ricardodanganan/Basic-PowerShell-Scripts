@@ -36,6 +36,7 @@ Get-ChildItem -Path $sourceDirectory -File | ForEach-Object {
     $file = $_
     # Get the extension of the file and remove the leading dot. 
     # Assign the extension to a variable named $extension.
+    # TrimStart is a method used to remove the some characters from the beginning of a string.
     $extension = $file.Extension.TrimStart('.')
     # Check if the file extension exists in the $fileTypeFolders array.
     # ContainsKey is used to check if the key exists in the array hashtable.
